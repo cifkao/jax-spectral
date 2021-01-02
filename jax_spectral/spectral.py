@@ -438,7 +438,7 @@ def istft(Zxx, fs=1.0, window='hann', nperseg=None, noverlap=None, nfft=None,
         norm = norm[..., nperseg//2:-(nperseg//2)]
 
     # Divide out normalization where non-tiny
-    if np.sum(norm > 1e-10) != len(norm):
+    if not isinstance(norm, jax.core.Tracer) and np.sum(norm > 1e-10) != len(norm):
         warnings.warn("NOLA condition failed, STFT may not be invertible")
     x /= np.where(norm > 1e-10, norm, 1.0)
 
