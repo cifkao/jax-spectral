@@ -13,5 +13,5 @@ See also the official [`jax.scipy.signal`](https://jax.readthedocs.io/en/latest/
 
 ## Installation
 ```
-pip install git+https://github.com/cifkao/jax-spectral.git@main#egg=jax-spectral
+pip install 'git+https://github.com/cifkao/jax-spectral.git@main#egg=jax-spectral'
 ```
